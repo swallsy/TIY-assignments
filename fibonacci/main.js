@@ -1,25 +1,23 @@
-
 let sum = 0;
-let number = 0;
+let a = 1;
+let b = 1;
+let c = 1;
 
-// Define a function that loops through numbers 1-100. Runs the number through the isMultiple function. If true, adds to sum.
-function findMultiples(i) {
-  for (i=0; i <= 1000; i++) {
-    if (isMultiple(i)) {
-      sum = sum + i;
-    }
+while (c <= 4000000) {
+  if (isEven(c)) {
+    sum = sum + c;
+  }
+  a = b;
+  b = c;
+  c = a + b;
+}
+
+function isEven(n) {
+  if (n % 2 === 0){
+    return true;
+  } else {
+    return false;
   }
 }
 
-// function checks if the number is a multiple of 3 or 5
-
-function isMultiple (n) {
- if (n % 3 === 0 || n % 5 === 0) {
-     return true;
- }  else {
-   return false;
-    }
-}
-
-findMultiples(number);
 console.log(sum);
